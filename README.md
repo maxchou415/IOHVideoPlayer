@@ -1,6 +1,6 @@
 # IOHVideoPlayer
 
-1. First you need insert your YouTube Video ID into `:46`, like
+First you need insert your YouTube Video ID into `:46`, like
 
 ```javascript
 var player;
@@ -17,5 +17,4 @@ var player;
       }
 ```
 
- 2. All Done!
- 3. You just need deploy to your server now.
+ All Done! You just need deploy to your server now.
