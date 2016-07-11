@@ -18,7 +18,7 @@ var player;
 ```
 
 ## Options
-### Add Button
+### Add button
 You can add more buttons before any `<script>` tag, and HTML code like
 ```html
 <button id="target4" class="btn btn-primary text-center">Jump to 10</button>
