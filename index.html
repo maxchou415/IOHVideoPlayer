@@ -10,7 +10,7 @@
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">IOH Video Player</a>
+          <a class="navbar-brand" href="#">IOH Video Player Demo</a>
         </div>
       </div><!-- /.container-fluid -->
     </nav>
@@ -21,8 +21,9 @@
         </div>
           <p></p>
         <button id="target" class="btn btn-primary text-center">Jump to 1:10</button>
-        <button id="target2" class="btn btn-success text-center">Jump to 2</button>
-        <button id="target3" class="btn btn-info text-center">Jump to 6</button>
+        <button id="target2" class="btn btn-success text-center">Jump to 2 mins</button>
+        <button id="target3" class="btn btn-info text-center">Jump to 6 mins</button>
+        <button id="target4" class="btn btn-danger text-center">Jump to 15 mins</button>
       </div>
     </div>
     <script>
@@ -73,6 +74,9 @@
       });
       $( "#target3" ).click(function() {
         playerSeekTo(player, 360)
+      });
+      $( "#target4" ).click(function() {
+        playerSeekTo(player, 900)
       });
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
