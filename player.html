@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">IOH Video Player</a>
+        </div>
+      </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container-fluid">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="embed-responsive embed-responsive-16by9">
+          <div id="player"></div>
+        </div>
+          <p></p>
+        <button id="target" class="btn btn-primary text-center">Jump to 1:10</button>
+        <button id="target2" class="btn btn-success text-center">Jump to 2</button>
+        <button id="target3" class="btn btn-info text-center">Jump to 6</button>
+      </div>
+    </div>
+    <script>
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '390',
+          width: '640',
+          videoId: 'bb8I9neMLLI', //Insert you youtube video id right here!
+          playerVars: { 'autoplay': 1, 'controls': 1},
+          events: {
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
+
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+      var done = false;
+      function onPlayerStateChange(event) {
+      }
+      function stopVideo() {
+        player.stopVideo();
+      }
+
+      function playerSeekTo(player, seconds) {
+        player.seekTo(seconds);
+    }
+    </script>
+
+    <!--Jquery and Option -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+      $( "#target" ).click(function() {
+        playerSeekTo(player, 70)
+      });
+      $( "#target2" ).click(function() {
+        playerSeekTo(player, 120)
+      });
+      $( "#target3" ).click(function() {
+        playerSeekTo(player, 360)
+      });
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  </body>
+</html>
