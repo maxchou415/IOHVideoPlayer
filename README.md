@@ -38,7 +38,7 @@ $( "#target4" ).click(function() {
 ### Resize video size
 First, should be you don't need resize it, because this plugin has RWD (Responsive Web Design) already, but if you just want resize it, just change here:
 
-```javascript```
+```javascript
 var player;
       function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
