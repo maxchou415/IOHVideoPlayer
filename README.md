@@ -17,4 +17,14 @@ var player;
       }
 ```
 
- All Done! You just need deploy to your server now.
+## Options
+You can add more buttons before any `<script>` tag, and HTML code like
+```html
+<button id="target4" class="btn btn-primary text-center">Jump to 10</button>
+```
+also, you need add control to your jQuery like,
+```javascript
+$( "#target4" ).click(function() {
+        playerSeekTo(player, 600)
+  });
+```
