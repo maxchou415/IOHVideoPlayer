@@ -22,12 +22,16 @@ var player;
 You can add more buttons before any `<script>` tag, and HTML code like
 ```html
 <button id="target4" class="btn btn-primary text-center">Jump to 10</button>
+<!-- id is name you want to link with your jquery-->
 ```
 also, you need add control to your jQuery like,
 ```javascript
 $( "#target4" ).click(function() {
         playerSeekTo(player, 600)
   });
+  
+ // #target4 is id define in your html
+ // 600 is second
 ```
 ### Resize video size
 First, should be you don't need resize it, because this plugin has RWD (Responsive Web Design) already, but if you just want resize it, just change here:
