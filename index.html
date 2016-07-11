@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>IOH Video Player by maxyihsunchou</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">IOH Video Player</h1>
+      <h2 class="project-tagline">You can define a time, and than click a button to jump to your target.</h2>
+      <a href="https://github.com/maxyihsunchou/IOHVideoPlayer" class="btn">View on GitHub</a>
+      <a href="https://github.com/maxyihsunchou/IOHVideoPlayer/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/maxyihsunchou/IOHVideoPlayer/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="iohvideoplayer" class="anchor" href="#iohvideoplayer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>IOHVideoPlayer</h1>
+
+<p>Demo here: <a href="https://iohvideoplayer-itxmc.c9users.io/">https://iohvideoplayer-itxmc.c9users.io/</a></p>
+
+<p>First you need insert your YouTube Video ID into <code>:46</code>, like</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> player;
+      <span class="pl-k">function</span> <span class="pl-en">onYouTubeIframeAPIReady</span>() {
+        player <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">YT.Player</span>(<span class="pl-s"><span class="pl-pds">'</span>player<span class="pl-pds">'</span></span>, {
+          height<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>390<span class="pl-pds">'</span></span>,
+          width<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>640<span class="pl-pds">'</span></span>,
+          videoId<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>, <span class="pl-c">//Insert you youtube video id right here!</span>
+          playerVars<span class="pl-k">:</span> { <span class="pl-s"><span class="pl-pds">'</span>autoplay<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-c1">1</span>, <span class="pl-s"><span class="pl-pds">'</span>controls<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-c1">1</span>},
+          events<span class="pl-k">:</span> {
+            <span class="pl-s"><span class="pl-pds">'</span>onStateChange<span class="pl-pds">'</span></span><span class="pl-k">:</span> onPlayerStateChange
+          }
+        });
+      }</pre></div>
+
+<h2>
+<a id="options" class="anchor" href="#options" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Options</h2>
+
+<h3>
+<a id="add-button" class="anchor" href="#add-button" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Add button</h3>
+
+<p>You can add more buttons before any <code>&lt;script&gt;</code> tag, and HTML code like</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">button</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>target4<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>btn btn-primary text-center<span class="pl-pds">"</span></span>&gt;Jump to 10&lt;/<span class="pl-ent">button</span>&gt;
+<span class="pl-c">&lt;!-- id is name you want to link with your jquery--&gt;</span></pre></div>
+
+<p>also, you need add control to your jQuery like,</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-en">$</span>( <span class="pl-s"><span class="pl-pds">"</span>#target4<span class="pl-pds">"</span></span> ).<span class="pl-c1">click</span>(<span class="pl-k">function</span>() {
+        <span class="pl-en">playerSeekTo</span>(player, <span class="pl-c1">600</span>)
+  });
+
+ <span class="pl-c">// #target4 is id define in your html</span>
+ <span class="pl-c">// 600 is second</span></pre></div>
+
+<h3>
+<a id="resize-video-size" class="anchor" href="#resize-video-size" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Resize video size</h3>
+
+<p>First, should be you don't need resize it, because this plugin has RWD (Responsive Web Design) already, but if you just want resize it, just change here:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> player;
+      <span class="pl-k">function</span> <span class="pl-en">onYouTubeIframeAPIReady</span>() {
+        player <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">YT.Player</span>(<span class="pl-s"><span class="pl-pds">'</span>player<span class="pl-pds">'</span></span>, {
+          height<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>390<span class="pl-pds">'</span></span>, <span class="pl-c">//here is your height</span>
+          width<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>640<span class="pl-pds">'</span></span>, <span class="pl-c">//here is your width</span>
+          videoId<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>, 
+          playerVars<span class="pl-k">:</span> { <span class="pl-s"><span class="pl-pds">'</span>autoplay<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-c1">1</span>, <span class="pl-s"><span class="pl-pds">'</span>controls<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-c1">1</span>},
+          events<span class="pl-k">:</span> {
+            <span class="pl-s"><span class="pl-pds">'</span>onStateChange<span class="pl-pds">'</span></span><span class="pl-k">:</span> onPlayerStateChange
+          }
+        });
+      }</pre></div>
+
+<h3>
+<a id="more-options" class="anchor" href="#more-options" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>More options</h3>
+
+<p>You can see <a href="https://developers.google.com/youtube/iframe_api_reference">YouTube Player API Reference for iframe Embeds</a></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/maxyihsunchou/IOHVideoPlayer">IOH Video Player</a> is maintained by <a href="https://github.com/maxyihsunchou">maxyihsunchou</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
