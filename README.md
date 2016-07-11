@@ -1,6 +1,7 @@
 # IOHVideoPlayer
 
 1. First you need insert your YouTube Video ID into `:46`, like
+
 ```javascript
 var player;
       function onYouTubeIframeAPIReady() {
@@ -16,4 +17,5 @@ var player;
       }
 ```
 
- 2. All Done! just deploy to your server now.
+ 2. All Done!
+ 3. You just need deploy to your server now.
