@@ -16,4 +16,4 @@ var player;
       }
 ```
 
-2. Finish, just deploy to your server.
+ 2. All Done! just deploy to your server now.
