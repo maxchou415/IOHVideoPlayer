@@ -11,21 +11,46 @@
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">IOH Video Player Demo</a>
+          <a class="navbar-brand" href="#">IOH Video Player</a>
         </div>
       </div><!-- /.container-fluid -->
     </nav>
     <div class="container-fluid">
       <div class="col-md-10 col-md-offset-1">
-        <div class="embed-responsive embed-responsive-16by9">
-          <div id="player"></div>
+        <div class="col-md-8">
+          <div class="embed-responsive embed-responsive-16by9">
+            <div id="player"></div>
+          </div>
         </div>
-          <p></p>
-        <div class="text-center">
-          <button id="target" class="btn btn-primary text-center">Jump to 1:10</button>
-          <button id="target2" class="btn btn-success text-center">Jump to 2 mins</button>
-          <button id="target3" class="btn btn-info text-center">Jump to 6 mins</button>
-          <button id="target4" class="btn btn-danger text-center">Jump to 15 mins</button>
+        <div class="col-md-4">
+          <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                  Jump to topic</a>
+                </h4>
+              </div>
+              <div id="collapse1" class="panel-collapse collapse">
+                <div class="panel-body"
+                  <div class="text-center">
+                    <p>
+                      <button id="target" class="btn btn-primary text-center">Jump to 1:10</button>
+                    </p>
+                    <p>
+                      <button id="target2" class="btn btn-success text-center">Jump to 2 mins</button>
+                    </p>
+                    <p>
+                      <button id="target3" class="btn btn-info text-center">Jump to 6 mins</button>
+                    </p>
+                    <p>
+                      <button id="target4" class="btn btn-danger text-center">Jump to 15 mins</button>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
