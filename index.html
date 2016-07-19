@@ -7,52 +7,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   </head>
   <body>
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">IOH Video Player</a>
-        </div>
-      </div><!-- /.container-fluid -->
-    </nav>
     <div class="container-fluid">
       <div class="col-md-10 col-md-offset-1">
-        <div class="col-md-8">
-          <div class="embed-responsive embed-responsive-16by9">
-            <div id="player"></div>
-          </div>
+        <div class="embed-responsive embed-responsive-16by9">
+          <div id="player"></div>
         </div>
-        <div class="col-md-4">
-          <div class="panel-group" id="accordion">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-                  Jump to topic</a>
-                </h4>
-              </div>
-              <div id="collapse1" class="panel-collapse collapse">
-                <div class="panel-body"
-                  <div class="text-center">
-                    <p>
-                      <button id="target" class="btn btn-primary text-center">Jump to 1:10</button>
-                    </p>
-                    <p>
-                      <button id="target2" class="btn btn-success text-center">Jump to 2 mins</button>
-                    </p>
-                    <p>
-                      <button id="target3" class="btn btn-info text-center">Jump to 6 mins</button>
-                    </p>
-                    <p>
-                      <button id="target4" class="btn btn-danger text-center">Jump to 15 mins</button>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+          <p></p>
+        <p>
+          <button id="target" class="btn btn-ioh text-center">跳耀到</button>
+           Q1. 當教授或老師，最有成就感或最快樂的時候是什麼？
+        </p>
+        <p>
+          <button id="target2" class="btn btn-ioh text-center">跳耀到</button>
+           Q2. 北醫的校風或資源方面有什麼特別的地方？
+        </p>
+        <p>
+          <button id="target3" class="btn btn-ioh text-center">跳耀到</button>
+           Q3. 請簡短介紹一下你們的科系
+        </p>
+        <p>
+          <button id="target4" class="btn btn-ioh text-center">跳耀到</button>
+           Q4. 你們系和其他大學的同系相比，有什麼不同或著重的地方？
+        </p>
+        <p>
+          <button id="target5" class="btn btn-ioh text-center">跳耀到</button>
+           Q5. 系上有沒有什麼特別的資源、實習或交換機會？
+        </p>
+        <p>
+          <button id="target6" class="btn btn-ioh text-center">跳耀到</button>
+           Q6. 什麼特質的人適合來就讀你們系？
+        </p>
+        <p>
+          <button id="target7" class="btn btn-ioh text-center">跳耀到</button>
+           Q7. 備審資料中，你最常看到的錯誤或是缺點是什麼？
+        </p>
+        <p>
+          <button id="target8" class="btn btn-ioh text-center">跳耀到</button>
+           Q8. 入學面試中，什麼樣的答辯或態度是會扣分的？
+        </p>
+        <p>
+          <button id="target9" class="btn btn-ioh text-center">跳耀到</button>
+           Q9. 系上畢業的學生，大多從事哪些工作？
+        </p>
+        <p>
+          <button id="target10" class="btn btn-ioh text-center">跳耀到</button>
+           Q10. 在高中時可以提早做些什麼準備或參加什麼活動，會對申請你們系比較有幫助呢？
+        </p>
+        <p>
+          <button id="target11" class="btn btn-ioh text-center">跳耀到</button>
+           Q11. 普遍來說，你覺得現在的高中生需加強哪些特質？
+        </p>
+        <p>
+          <button id="target12" class="btn btn-ioh text-center">跳耀到</button>
+           Q12. 現在的學生在求學、選科系上，需考量的點跟你當時的年代有什麼不同？
+        </p>
+        <p>
+          <button id="target13" class="btn btn-ioh text-center">跳耀到</button>
+           Q13. 你覺得大學應該要選系還是選校？
+        </p>
+        <p>
+          <button id="target14" class="btn btn-ioh text-center">跳耀到</button>
+           Q14. 當家長和自己小孩對於校系的選擇持有不同看法時，你會建議家長該怎麼做呢？
+        </p>
+        <p>
+          <button id="target15" class="btn btn-ioh text-center">跳耀到</button>
+           Q15. 對於系上相關產業體系及未來發展，教授有什麼看法呢？
+        </p>
+        <p>
+          <button id="target16" class="btn btn-ioh text-center">跳耀到</button>
+           Q16. 如果可以跟現在的高中生提出一個建議，這個建議會是什麼？
+        </p>
+
     </div>
     <script>
       var tag = document.createElement('script');
@@ -68,7 +93,7 @@
         player = new YT.Player('player', {
           height: '390',
           width: '640',
-          videoId: 'bb8I9neMLLI', //Insert you youtube video id right here!
+          videoId: 'kr37ggK--fM', //Insert you youtube video id right here!
           playerVars: { 'autoplay': 1, 'controls': 1},
           events: {
             'onStateChange': onPlayerStateChange
@@ -95,17 +120,54 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script>
       $( "#target" ).click(function() {
-        playerSeekTo(player, 70)
+        playerSeekTo(player, 15)
       });
       $( "#target2" ).click(function() {
-        playerSeekTo(player, 120)
+        playerSeekTo(player, 25)
       });
       $( "#target3" ).click(function() {
-        playerSeekTo(player, 360)
+        playerSeekTo(player, 92)
       });
       $( "#target4" ).click(function() {
-        playerSeekTo(player, 900)
+        playerSeekTo(player, 127)
       });
+      $( "#target5" ).click(function() {
+        playerSeekTo(player, 179)
+      });
+      $( "#target6" ).click(function() {
+        playerSeekTo(player, 234)
+      });
+      $( "#target7" ).click(function() {
+        playerSeekTo(player, 288)
+      });
+      $( "#target8" ).click(function() {
+        playerSeekTo(player, 402)
+      });
+      $( "#target9" ).click(function() {
+        playerSeekTo(player, 486)
+      });
+      $( "#target10" ).click(function() {
+        playerSeekTo(player, 577)
+      });
+      $( "#target11" ).click(function() {
+        playerSeekTo(player, 693)
+      });
+      $( "#target12" ).click(function() {
+        playerSeekTo(player, 808)
+      });
+      $( "#target13" ).click(function() {
+        playerSeekTo(player, 951)
+      });
+      $( "#target14" ).click(function() {
+        playerSeekTo(player, 1101)
+      });
+      $( "#target15" ).click(function() {
+        playerSeekTo(player, 1222)
+      });
+      $( "#target16" ).click(function() {
+        playerSeekTo(player, 1423)
+      });
+
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   </body>

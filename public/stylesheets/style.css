@@ -1,3 +1,8 @@
 .btn {
   border-radius: 0px !important;
 }
+.btn-ioh {
+  background-color: #FF0000;
+  border-color: #FF0000;
+  color: white;
+}
